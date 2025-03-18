@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getTopServices } from '../data/services';
+
+const services = getTopServices(12);
+const top10Services = services.slice(0, 10);
+const top3Services = services.slice(0, 3);
+---
+
+<Layout title="Сравнение стриминговых сервисов">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-4xl font-bold mb-8">Сравнение стриминговых видео сервисов</h1>
+    
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead class="bg-card">
+          <tr>
+            <th class="p-4 text-left">Сервис</th>
+            <th class="p-4 text-left">Рейтинг</th>
+            <th class="p-4 text-left">Базовая цена</th>
+            <th class="p-4 text-left">Пробный период</th>
+            <th class="p-4 text-left">Качество видео</th>
+            <th class="p-4 text-left">Библиотека</th>
+          </tr>
+        </thead>
+        <tbody>
+          {top10Services.map((service, index) => (
+            <tr class={`border-t border-gray-800 ${
+              index < 3 
+                ? 'bg-accent-orange/10' 
+                : index % 2 === 0 
+                  ? 'bg-card/50' 
+                  : ''
+            }`}>
+              <td class="p-4 font-medium">{service.name}</td>
+              <td class="p-4">
+                <div class="flex items-center gap-1">
+                  <span class="text-accent-blue">★</span>
+                  <span>{service.rating}</span>
+                </div>
+              </td>
+              <td class="p-4">{service.pricing.basic_plan} ₽/мес</td>
+              <td class="p-4">{service.pricing.free_trial}</td>
+              <td class="p-4">{service.quality.max_resolution}</td>
+              <td class="p-4">{service.content.total_movies_series}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-12 space-y-8">
+      <div class="bg-card rounded-lg p-6">
+        <h2 class="text-2xl font-semibold mb-4">Как выбрать стриминговый сервис?</h2>
+        <div class="space-y-4">
+          <p>При выборе стримингового сервиса стоит обратить внимание на следующие факторы:</p>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Размер библиотеки контента и наличие интересующих вас фильмов и сериалов</li>
+            <li>Стоимость подписки и наличие пробного периода</li>
+            <li>Качество видео и поддержка HDR</li>
+            <li>Возможность скачивания контента для офлайн-просмотра</li>
+            <li>Поддержка ваших устройств (Smart TV, мобильные устройства)</li>
+            <li>Наличие эксклюзивного контента</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-lg p-6">
+        <h2 class="text-2xl font-semibold mb-4">Популярные комбинации сервисов</h2>
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-xl font-medium mb-2">Максимальная библиотека</h3>
+            <p>Кинопоиск + Иви + Okko</p>
+            <p class="text-gray-400 mt-1">Самый большой выбор контента с поддержкой 4K HDR</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium mb-2">Бюджетный вариант</h3>
+            <p>More.TV + Viju</p>
+            <p class="text-gray-400 mt-1">Доступная цена с хорошим выбором контента</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-medium mb-2">Для ценителей сериалов</h3>
+            <p>Amediateka + Start + SerialSpace</p>
+            <p class="text-gray-400 mt-1">Лучшие российские и зарубежные сериалы</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-lg p-6">
+        <h2 class="text-2xl font-semibold mb-6">Сводная таблица ТОП-3</h2>
+        <table class="w-full border-collapse">
+          <thead class="bg-accent-orange/10">
+            <tr>
+              <th class="p-4 text-left">Место</th>
+              <th class="p-4 text-left">Сервис</th>
+              <th class="p-4 text-left">Рейтинг</th>
+              <th class="p-4 text-left">Цена</th>
+              <th class="p-4 text-left">Библиотека</th>
+              <th class="p-4 text-left">Качество</th>
+            </tr>
+          </thead>
+          <tbody>
+            {top3Services.map((service, index) => (
+              <tr class="border-t border-gray-800">
+                <td class="p-4">
+                  <span class="text-xl font-bold text-accent-orange">#{index + 1}</span>
+                </td>
+                <td class="p-4 font-medium">{service.name}</td>
+                <td class="p-4">
+                  <div class="flex items-center gap-1">
+                    <span class="text-accent-blue">★</span>
+                    <span>{service.rating}</span>
+                  </div>
+                </td>
+                <td class="p-4">{service.pricing.basic_plan} ₽/мес</td>
+                <td class="p-4">{service.content.total_movies_series}</td>
+                <td class="p-4">{service.quality.max_resolution}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</Layout>

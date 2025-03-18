@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import { getSortedServices, getTopServices } from '../data/services';
+
+const services = getSortedServices();
+const top10Services = getTopServices(10);
+---
+
+<Layout title="Сравнение стриминговых сервисов России">
+  <h1 class="text-4xl font-bold mb-8">Стриминговые сервисы России ТОП</h1>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+    {services.map(service => (
+      <ServiceCard service={service} />
+    ))}
+  </div>
+
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6">Сравнительная таблица</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead class="bg-card">
+          <tr>
+            <th class="p-4 text-left">Сервис</th>
+            <th class="p-4 text-left">Рейтинг</th>
+            <th class="p-4 text-left">Базовая цена</th>
+            <th class="p-4 text-left">Пробный период</th>
+            <th class="p-4 text-left">Качество видео</th>
+            <th class="p-4 text-left">Библиотека</th>
+          </tr>
+        </thead>
+        <tbody>
+          {top10Services.map((service, index) => (
+            <tr class={`border-t border-gray-800 ${
+              index < 3 
+                ? 'bg-accent-orange/10' 
+                : index % 2 === 0 
+                  ? 'bg-card/50' 
+                  : ''
+            }`}>
+              <td class="p-4 font-medium">{service.name}</td>
+              <td class="p-4">
+                <div class="flex items-center gap-1">
+                  <span class="text-accent-blue">★</span>
+                  <span>{service.rating}</span>
+                </div>
+              </td>
+              <td class="p-4">{service.pricing.basic_plan} ₽/мес</td>
+              <td class="p-4">{service.pricing.free_trial}</td>
+              <td class="p-4">{service.quality.max_resolution}</td>
+              <td class="p-4">{service.content.total_movies_series}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</Layout>

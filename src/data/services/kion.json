@@ -1,0 +1,34 @@
+{
+  "name": "Kion",
+  "slug": "kion",
+  "rating": 4.4,
+  "order": 5,
+  "url": "https://kion.ru",
+  "logo": "/KION.jpg",
+  "pricing": {
+    "free_trial": "14 дней",
+    "basic_plan": 299,
+    "premium_plan": 399,
+    "ads_supported": false
+  },
+  "content": {
+    "total_movies_series": "50,000+",
+    "exclusive_shows": ["Хрустальный", "Капкан"],
+    "genres": ["Фильмы", "Сериалы", "Спорт", "Детям"]
+  },
+  "quality": {
+    "max_resolution": "4K HDR",
+    "dolby_atmos": true,
+    "surround_sound": true
+  },
+  "availability": {
+    "offline_download": true,
+    "multiple_profiles": true
+  },
+  "platform_support": {
+    "web_browser": true,
+    "mobile_app": true,
+    "smart_tv": true,
+    "game_consoles": false
+  }
+}

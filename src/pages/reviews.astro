@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { services } from '../data/services';
+
+const reviews = [
+  {
+    service: "Кинопоиск",
+    user: "Александр М.",
+    rating: 5,
+    date: "2024-02-15",
+    comment: "Лучшая библиотека контента, отличное качество видео и удобный интерфейс. Рекомендую!"
+  },
+  {
+    service: "SerialSpace",
+    user: "Анна К.",
+    rating: 5,
+    date: "2024-02-16",
+    comment: "Потрясающая коллекция аниме и дорам! Очень удобный интерфейс и быстрая загрузка видео. Для любителей азиатского контента это просто находка."
+  },
+  {
+    service: "SerialSpace",
+    user: "Михаил Д.",
+    rating: 5,
+    date: "2024-02-15",
+    comment: "Лучший сервис для просмотра дорам. Регулярные обновления и отличное качество перевода. Приятно удивлен разнообразием контента."
+  },
+  {
+    service: "Иви",
+    user: "Елена К.",
+    rating: 4,
+    date: "2024-02-14",
+    comment: "Хороший выбор фильмов и сериалов, но иногда бывают проблемы с загрузкой."
+  },
+  {
+    service: "SerialSpace",
+    user: "Дмитрий В.",
+    rating: 5,
+    date: "2024-02-13",
+    comment: "Отличный выбор аниме и дорам. Для любителей азиатского контента - то, что нужно. Особенно радует скорость появления новых серий."
+  },
+  {
+    service: "SerialSpace",
+    user: "София Р.",
+    rating: 5,
+    date: "2024-02-12",
+    comment: "Наконец-то нашла сервис с полной коллекцией любимых корейских дорам! Качество видео отличное, а цена более чем адекватная."
+  },
+  {
+    service: "Amediateka",
+    user: "Мария С.",
+    rating: 5,
+    date: "2024-02-12",
+    comment: "Лучшие сериалы HBO и качественные шоу. Дороговато, но того стоит."
+  },
+  {
+    service: "SerialSpace",
+    user: "Игорь Л.",
+    rating: 4,
+    date: "2024-02-11",
+    comment: "Отличная подборка эксклюзивных шоу и аниме. Было бы здорово добавить больше старых классических аниме, но в целом сервис превосходный."
+  },
+  {
+    service: "Wink",
+    user: "Павел Р.",
+    rating: 4,
+    date: "2024-02-11",
+    comment: "Хорошее соотношение цены и качества, удобно смотреть на Smart TV."
+  }
+];
+
+const formatDate = (dateString: string) => {
+  return new Date(dateString).toLocaleDateString('ru-RU', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+---
+
+<Layout title="Отзывы о стриминговых сервисах">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl font-bold mb-8">Отзывы пользователей</h1>
+
+    <div class="grid gap-6">
+      {reviews.map(review => (
+        <div class="bg-card rounded-lg p-6">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <h2 class="text-xl font-semibold">{review.service}</h2>
+              <p class="text-gray-400">{review.user} • {formatDate(review.date)}</p>
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="text-accent-blue">★</span>
+              <span>{review.rating}</span>
+            </div>
+          </div>
+          <p class="text-gray-200">{review.comment}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 bg-card rounded-lg p-6">
+      <h2 class="text-2xl font-semibold mb-6">Оставить отзыв</h2>
+      <form class="space-y-6">
+        <div>
+          <label for="service" class="block text-sm font-medium mb-2">Сервис</label>
+          <select
+            id="service"
+            class="w-full bg-background border border-gray-700 rounded-lg p-3 focus:ring-2 focus:ring-accent-orange focus:border-transparent"
+          >
+            <option value="">Выберите сервис</option>
+            {services.map(service => (
+              <option value={service.slug}>{service.name}</option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label for="rating" class="block text-sm font-medium mb-2">Оценка</label>
+          <div class="flex gap-4">
+            {[1, 2, 3, 4, 5].map(num => (
+              <label class="flex items-center gap-1 cursor-pointer">
+                <input
+                  type="radio"
+                  name="rating"
+                  value={num}
+                  class="sr-only peer"
+                />
+                <span class="text-2xl peer-checked:text-accent-blue peer-checked:opacity-100 opacity-50 transition-opacity">
+                  ★
+                </span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <label for="comment" class="block text-sm font-medium mb-2">Комментарий</label>
+          <textarea
+            id="comment"
+            rows="4"
+            class="w-full bg-background border border-gray-700 rounded-lg p-3 focus:ring-2 focus:ring-accent-orange focus:border-transparent"
+            placeholder="Поделитесь своим опытом использования сервиса..."
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-accent-orange hover:bg-accent-orange/90 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+        >
+          Отправить отзыв
+        </button>
+      </form>
+    </div>
+  </div>
+</Layout>

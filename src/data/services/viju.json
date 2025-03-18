@@ -1,0 +1,34 @@
+{
+  "name": "Viju",
+  "slug": "viju",
+  "rating": 4.1,
+  "order": 11,
+  "url": "https://viju.ru",
+  "logo": "/Viju.webp",
+  "pricing": {
+    "free_trial": "7 дней",
+    "basic_plan": 199,
+    "premium_plan": 299,
+    "ads_supported": true
+  },
+  "content": {
+    "total_movies_series": "15,000+",
+    "exclusive_shows": ["Дракулов", "Почка"],
+    "genres": ["Фильмы", "Сериалы", "Paramount+", "MTV"]
+  },
+  "quality": {
+    "max_resolution": "1080p",
+    "dolby_atmos": false,
+    "surround_sound": true
+  },
+  "availability": {
+    "offline_download": true,
+    "multiple_profiles": true
+  },
+  "platform_support": {
+    "web_browser": true,
+    "mobile_app": true,
+    "smart_tv": true,
+    "game_consoles": false
+  }
+}

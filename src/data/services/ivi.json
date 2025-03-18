@@ -1,0 +1,34 @@
+{
+  "name": "Иви",
+  "slug": "ivi",
+  "rating": 4.6,
+  "order": 2,
+  "url": "https://ivi.ru",
+  "logo": "/IVI.jpg",
+  "pricing": {
+    "free_trial": "14 дней",
+    "basic_plan": 399,
+    "premium_plan": 599,
+    "ads_supported": true
+  },
+  "content": {
+    "total_movies_series": "90,000+",
+    "exclusive_shows": ["Сказки Пушкина", "Территория"],
+    "genres": ["Фильмы", "Сериалы", "Мультфильмы", "ТВ-шоу"]
+  },
+  "quality": {
+    "max_resolution": "4K HDR",
+    "dolby_atmos": true,
+    "surround_sound": true
+  },
+  "availability": {
+    "offline_download": true,
+    "multiple_profiles": true
+  },
+  "platform_support": {
+    "web_browser": true,
+    "mobile_app": true,
+    "smart_tv": true,
+    "game_consoles": false
+  }
+}

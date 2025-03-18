@@ -1,0 +1,34 @@
+{
+  "name": "SerialSpace",
+  "slug": "serialspace",
+  "rating": 4.9,
+  "order": 0,
+  "url": "https://serialspace.ru",
+  "logo": "/Serial.webp",
+  "pricing": {
+    "free_trial": "нет, но есть все студии",
+    "basic_plan": 199,
+    "premium_plan": 390,
+    "ads_supported": true
+  },
+  "content": {
+    "total_movies_series": "100,000+",
+    "exclusive_shows": ["Переводы StandU", "Все студии озвучек"],
+    "genres": ["Сериалы", "Аниме", "Фильмы", "ТВ-шоу", "Подкасты", "Подкасты"]
+  },
+  "quality": {
+    "max_resolution": "1080p",
+    "dolby_atmos": false,
+    "surround_sound": true
+  },
+  "availability": {
+    "offline_download": true,
+    "multiple_profiles": true
+  },
+  "platform_support": {
+    "web_browser": true,
+    "mobile_app": true,
+    "smart_tv": true,
+    "game_consoles": false
+  }
+}

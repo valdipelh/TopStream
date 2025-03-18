@@ -1,0 +1,34 @@
+{
+  "name": "Start",
+  "slug": "start",
+  "rating": 4.5,
+  "order": 6,
+  "url": "https://start.ru",
+  "logo": "/START.png",
+  "pricing": {
+    "free_trial": "7 дней",
+    "basic_plan": 299,
+    "premium_plan": 499,
+    "ads_supported": false
+  },
+  "content": {
+    "total_movies_series": "40,000+",
+    "exclusive_shows": ["Содержанки", "Бывшие"],
+    "genres": ["Фильмы", "Сериалы", "Шоу", "Спорт"]
+  },
+  "quality": {
+    "max_resolution": "4K HDR",
+    "dolby_atmos": false,
+    "surround_sound": true
+  },
+  "availability": {
+    "offline_download": true,
+    "multiple_profiles": true
+  },
+  "platform_support": {
+    "web_browser": true,
+    "mobile_app": true,
+    "smart_tv": true,
+    "game_consoles": false
+  }
+}

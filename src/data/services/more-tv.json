@@ -1,0 +1,34 @@
+{
+  "name": "More.TV",
+  "slug": "more-tv",
+  "rating": 4.2,
+  "order": 8,
+  "url": "https://more.tv",
+  "logo": "/More.jpg",
+  "pricing": {
+    "free_trial": "нет",
+    "basic_plan": 199,
+    "premium_plan": 299,
+    "ads_supported": true
+  },
+  "content": {
+    "total_movies_series": "25,000+",
+    "exclusive_shows": ["Проект Анна Николаевна", "Трудные подростки"],
+    "genres": ["Фильмы", "Сериалы", "СТС", "Домашний"]
+  },
+  "quality": {
+    "max_resolution": "1080p",
+    "dolby_atmos": false,
+    "surround_sound": true
+  },
+  "availability": {
+    "offline_download": true,
+    "multiple_profiles": true
+  },
+  "platform_support": {
+    "web_browser": true,
+    "mobile_app": true,
+    "smart_tv": true,
+    "game_consoles": false
+  }
+}

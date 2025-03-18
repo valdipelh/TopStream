@@ -1,0 +1,34 @@
+{
+  "name": "Okko",
+  "slug": "okko",
+  "rating": 4.7,
+  "order": 4,
+  "url": "https://okko.tv",
+  "logo": "/Okko.png",
+  "pricing": {
+    "free_trial": "7 дней",
+    "basic_plan": 399,
+    "premium_plan": 649,
+    "ads_supported": false
+  },
+  "content": {
+    "total_movies_series": "80,000+",
+    "exclusive_shows": ["Чики", "Псих"],
+    "genres": ["Фильмы", "Сериалы", "Спорт", "Концерты"]
+  },
+  "quality": {
+    "max_resolution": "4K HDR",
+    "dolby_atmos": true,
+    "surround_sound": true
+  },
+  "availability": {
+    "offline_download": true,
+    "multiple_profiles": true
+  },
+  "platform_support": {
+    "web_browser": true,
+    "mobile_app": true,
+    "smart_tv": true,
+    "game_consoles": true
+  }
+}

@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+prompt.txt
+
+node_modules/
+venv/
+dist/
+
+.idea/
+.vscode/
+*.swp
+*.log
+*.tmp
+*.bak
+.env

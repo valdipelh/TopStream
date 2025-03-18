@@ -1,0 +1,34 @@
+{
+  "name": "Premier",
+  "slug": "premier",
+  "rating": 4.3,
+  "order": 7,
+  "url": "https://premier.one",
+  "logo": "/Premier.webp",
+  "pricing": {
+    "free_trial": "7 дней",
+    "basic_plan": 299,
+    "premium_plan": 499,
+    "ads_supported": true
+  },
+  "content": {
+    "total_movies_series": "30,000+",
+    "exclusive_shows": ["Жуки", "Толя-робот"],
+    "genres": ["Фильмы", "Сериалы", "ТНТ", "ТВ-3"]
+  },
+  "quality": {
+    "max_resolution": "4K HDR",
+    "dolby_atmos": false,
+    "surround_sound": true
+  },
+  "availability": {
+    "offline_download": true,
+    "multiple_profiles": true
+  },
+  "platform_support": {
+    "web_browser": true,
+    "mobile_app": true,
+    "smart_tv": true,
+    "game_consoles": false
+  }
+}

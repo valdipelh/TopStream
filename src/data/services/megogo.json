@@ -1,0 +1,34 @@
+{
+  "name": "Megogo",
+  "slug": "megogo",
+  "rating": 4.3,
+  "order": 10,
+  "url": "https://megogo.ru",
+  "logo": "/Megogo.png",
+  "pricing": {
+    "free_trial": "нет",
+    "basic_plan": 399,
+    "premium_plan": 549,
+    "ads_supported": true
+  },
+  "content": {
+    "total_movies_series": "75,000+",
+    "exclusive_shows": ["Спіймати Кайдаша", "Папік"],
+    "genres": ["Фильмы", "Сериалы", "ТВ-каналы", "Спорт"]
+  },
+  "quality": {
+    "max_resolution": "1080p",
+    "dolby_atmos": false,
+    "surround_sound": true
+  },
+  "availability": {
+    "offline_download": true,
+    "multiple_profiles": true
+  },
+  "platform_support": {
+    "web_browser": true,
+    "mobile_app": true,
+    "smart_tv": true,
+    "game_consoles": false
+  }
+}
